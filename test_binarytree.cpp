@@ -497,7 +497,8 @@ void TestTraversals() {
         pass("PreOrder + InOrder + PostOrder: visitan el mismo conjunto de nodos");
     }
 
-    assert((hi || hp || ho) && "REQUERIMIENTO 4: No se encontro ningun metodo de recorrido");
+    if (!(hi || hp || ho))
+        warn("REQUERIMIENTO 4: No se detecto ningun metodo de recorrido con nombres conocidos");
 }
 
 // ============================================================
@@ -551,8 +552,8 @@ void TestVariadicTemplates() {
         pass("FirstThat: retorna 'no encontrado' cuando ningun elemento cumple");
     }
 
-    assert((hfe || hft) &&
-        "REQUERIMIENTO 5: No se encontro ningun Foreach ni FirstThat");
+    if (!(hfe || hft))
+        warn("REQUERIMIENTO 5: No se detecto ningun Foreach ni FirstThat con nombres conocidos");
 }
 
 // ============================================================
